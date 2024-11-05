@@ -1,0 +1,22 @@
+---
+import MainLayout from "../components/layouts/MainLayout.astro";
+if (!Astro.locals.auth().userId) {
+  return Astro.redirect('/login')
+}
+
+const user = await Astro.locals.currentUser()
+const isAdmin = user?.privateMetadata?.isAdmin || false
+
+---
+
+
+<MainLayout title="Aprende CLERK: Astro">
+<h1>Dashboard</h1> { isAdmin }
+{ isAdmin && <span>El putas</span> }
+<pre>
+  <code>
+    {JSON.stringify(user, null, 2)}
+
+  </code>
+</pre>
+</MainLayout>
