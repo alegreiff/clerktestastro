@@ -1,23 +1,24 @@
 ---
 
 
+import { UserProfile } from "@clerk/astro/components";
 import MainLayout from "../components/layouts/MainLayout.astro";
 if (!Astro.locals.auth().userId) {
   return Astro.redirect('/login')
 }
 
 const user = await Astro.locals.currentUser()
-const isAdmin = user?.privateMetadata?.isAdmin || false
+/* const isAdmin = user?.privateMetadata?.isAdmin || false */
 
 
 ---
 
 
-<MainLayout title="Aprende CLERK: Astro">
-<h1>Dashboard</h1> { isAdmin }
+<MainLayout title="Dashboard">
+<h1>Dashboard</h1> 
 
+<UserProfile  />
 
-{ isAdmin && <span>El putas</span> }
 <pre>
   <code>
     {JSON.stringify(user, null, 2)}
