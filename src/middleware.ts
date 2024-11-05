@@ -21,7 +21,7 @@ export const onRequest =  clerkMiddleware((auth, context) => {
 
   
   if (
-    (isAdminRoute(context.request) && !has({ permission: 'org:sys_profile:manage' })) 
+    (isAdminRoute(context.request) && !has({ permission: 'org:sys_domains:read' })) 
   ) {
     // Add logic to run if the user does not have the required permissions; for example, redirecting to the sign-in page
     //return redirectToSignIn()

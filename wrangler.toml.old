@@ -4,3 +4,27 @@ compatibility_flags = ["transformstream_enable_standard_constructor"]
 compatibility_flags = ["streams_enable_constructors"]
 compatibility_date = "2024-05-13"
 pages_build_output_dir = "dist"
+
+	Actions
+Admin
+Creator role
+Role with elevated permissions in the organization.
+
+org:admin
+org:sys_domains:manage
+,
+org:sys_domains:read
+,
+org:sys_memberships:manage
+,
+org:sys_memberships:read
+,
+org:sys_profile:delete
+,
+org:sys_profile:manage
+Member
+Default role
+Role with non-privileged permissions in the organization.
+
+org:member
+org:sys_memberships:read

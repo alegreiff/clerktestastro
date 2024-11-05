@@ -23,7 +23,7 @@ import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/astro/comp
         <li><a href="/">Inicio</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/public">Public</a></li>
-        <Protect permission="org:sys_profile:manage">
+        <Protect permission="org:sys_domains:read">
           <li><a href="/admin">Admin</a></li>
           </Protect> 
       
