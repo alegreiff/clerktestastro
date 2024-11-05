@@ -1,4 +1,6 @@
 name = "clerk"
 compatibility_flags = ["nodejs_als"]
+compatibility_flags = ["transformstream_enable_standard_constructor"]
+compatibility_flags = ["streams_enable_constructors"]
 compatibility_date = "2024-05-13"
 pages_build_output_dir = "dist"
