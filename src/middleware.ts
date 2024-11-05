@@ -2,12 +2,16 @@
 
 //export const onRequest = clerkMiddleware();
 
+
+
+
+
 import { clerkMiddleware, createRouteMatcher } from '@clerk/astro/server'
 
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/public(.*)'])
 const isAdminRoute=createRouteMatcher(['/admin(.*)'])
 
-export const onRequest = clerkMiddleware((auth, context) => {
+export const onRequest =  clerkMiddleware((auth, context) => {
   
   const { redirectToSignIn, userId, has } = auth()
 
@@ -18,10 +22,16 @@ export const onRequest = clerkMiddleware((auth, context) => {
     return context.redirect('/');
   }
 
-
+  
+  if (
+    (isAdminRoute(context.request) && !has({ permission: 'org:administrador:sisas' })) 
+  ) {
+    // Add logic to run if the user does not have the required permissions; for example, redirecting to the sign-in page
+    //return redirectToSignIn()
+    return context.redirect('/');
+  }
   
 
-
-
 })
+
 

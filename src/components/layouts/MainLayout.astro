@@ -17,15 +17,16 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{ title }</title>
 	</head>
-  <body>
+  <body class="min-h-screen bg-slate-400">
     <main class="bg-amber-50 container mx-auto">
-      <header>
+      
         <NaviMain />
+        <section class="p-4 border-b-8 border-lime-300">
+          <slot />
+        </section>
         
-      </header>
-      <article>
-        <slot />
-      </article>
+      
+      
     </main>
   </body>
 </html>
