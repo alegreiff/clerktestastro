@@ -6,5 +6,7 @@ export default {
 	},
 	plugins: [
 		require("flyonui"),
+		require("flyonui/plugin") // Require only if you want to use FlyonUI JS component
+
 	],
 }
